@@ -14,8 +14,28 @@ def max_wind_speed(hurricane_filename):
     Returns:
     (type: int) The maximum wind speed of the hurricane.
     """
+    f = open(hurricane_filename, 'r')       # r = read
+    biggest = 0
+    # 1. go to the wind speed column and scroll down
+    for line in f:
+        vals = line.split(',')
 
-    pass # replace this line with your implementation of this function
+        speed = int(vals[4])
+    # 3. save the largest wind speed value youve seen so far
+        if speed > biggest:
+            speed = biggest
+    # 4. return largest value
+        return biggest 
+    
+    print(type(int(vals[4])))               #print(type(int(vals[4])))
+
+    
+    # 1. go to the wind speed column and scroll down 
+    # 2. compare current wind speed values wiht the previous
+    # 3. save the largest wind speed value youve seen so far
+    # 4. return largest value
+
+
 
 
 def contains_word(word, review):
@@ -38,7 +58,15 @@ def contains_word(word, review):
 
 
 def test_max_wind_speed():
-    """ Function that tests the max_wind_speed function. """
+   """ Function that tests the max_wind_speed function. """
+    
+    
+
+
+
+
+
+    print(max_wind_speed("irma.csv"))
 
     print("Starting test of max_wind_speed")
 
@@ -46,7 +74,27 @@ def test_max_wind_speed():
     # statement to indicate whether the result was correct or not.
     # Then repeat the process for the florence.csv and dorian.csv files to check
     # whether your function works for those files.
+    
+    if max_wind_speed("irma.csv") == 185:        #185
+        print(“max_wind_speed(irma.csv) PASSED”)
+    
+    else:
+        print(“max_wind_speed(irma.csv) FAILED”)
+              
 
+    if max_wind_speed("florence.csv") == 140:        #185
+        print(“max_wind_speed(florence.csv) PASSED”)
+    
+    else:
+        print(“max_wind_speed(florence.csv) FAILED”)
+              
+
+    if max_wind_speed("irma.csv") == 185:        #185
+        print(“max_wind_speed(irma.csv) PASSED”)
+    
+    else:
+        print(“max_wind_speed(irma.csv) FAILED”)
+              
     print("FAILED: Not implemented yet.") # remove this line when you finish the to do
 
     print("Done testing max_wind_speed")
